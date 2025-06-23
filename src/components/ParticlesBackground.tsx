@@ -22,7 +22,7 @@ const ParticlesBackground = () => {
         id="tsparticles"
         options={{
           fullScreen: { enable: false },
-          background: { color: 'transparent' },
+          background: { color: 'rgba(0,0,0,0)' },
           particles: {
             number: { value: 60 },
             size: { value: 2 },
