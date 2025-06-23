@@ -23,7 +23,7 @@ const iconVariants = {
     y: 0,
     transition: {
       duration: 0.3,
-      ease: 'easeOut',
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
