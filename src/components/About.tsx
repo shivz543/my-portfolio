@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, cubicBezier } from 'framer-motion';
 import {
   SiJavascript,
   SiTypescript,
@@ -23,7 +23,7 @@ const iconVariants = {
     y: 0,
     transition: {
       duration: 0.3,
-      ease: [0.25, 0.1, 0.25, 1],
+      ease: cubicBezier(0.25, 0.1, 0.25, 1),
     },
   },
 };
