@@ -30,7 +30,7 @@ const iconVariants = {
 
 // IconWrapper avoids TypeScript error during build
 const IconWrapper = ({ children }: { children: React.ReactNode }) => (
-  <motion.div variants={iconVariants}>
+  <motion.div> {/* Removed variants={iconVariants} */}
     {children}
   </motion.div>
 );
@@ -106,18 +106,18 @@ const About = () => {
             >
               <p className="text-lg font-medium mb-3 text-white/80">Languages</p>
               <div className="flex flex-wrap gap-6 text-4xl">
-                <IconWrapper>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiJavascript title="JavaScript" className="text-yellow-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
-                <IconWrapper>
+                </motion.div>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiTypescript title="TypeScript" className="text-blue-500 hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
-                <IconWrapper>
+                </motion.div>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiPython title="Python" className="text-yellow-300 hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
-                <IconWrapper>
+                </motion.div>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiCplusplus title="C++" className="text-blue-600 hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -138,18 +138,18 @@ const About = () => {
             >
               <p className="text-lg font-medium mb-3 text-white/80">Frameworks & Libraries</p>
               <div className="flex flex-wrap gap-6 text-4xl">
-                <IconWrapper>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiReact title="React" className="text-cyan-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
-                <IconWrapper>
+                </motion.div>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiNextdotjs title="Next.js" className="text-black dark:text-white hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
-                <IconWrapper>
+                </motion.div>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiTailwindcss title="Tailwind CSS" className="text-sky-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
-                <IconWrapper>
+                </motion.div>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiNodedotjs title="Node.js" className="text-green-500 hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -170,12 +170,12 @@ const About = () => {
             >
               <p className="text-lg font-medium mb-3 text-white/80">Tools</p>
               <div className="flex flex-wrap gap-6 text-4xl">
-                <IconWrapper>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiGit title="Git" className="text-orange-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
-                <IconWrapper>
+                </motion.div>
+                <motion.div variants={iconVariants}> {/* ADDED variants here */}
                   <SiGithub title="GitHub" className="text-gray-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
-                </IconWrapper>
+                </motion.div>
               </div>
             </motion.div>
           </div>
