@@ -15,6 +15,7 @@ import {
   SiGit,
 } from 'react-icons/si';
 
+// Animation variant for icons
 const iconVariants = {
   hidden: { opacity: 0, y: 10 },
   visible: {
@@ -26,6 +27,13 @@ const iconVariants = {
     },
   },
 };
+
+// IconWrapper avoids TypeScript error during build
+const IconWrapper = ({ children }: { children: React.ReactNode }) => (
+  <motion.div variants={iconVariants}>
+    {children}
+  </motion.div>
+);
 
 const About = () => {
   return (
@@ -47,6 +55,7 @@ const About = () => {
       </motion.h2>
 
       <div className="space-y-10 max-w-4xl mx-auto z-10 relative">
+        {/* Education */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -55,10 +64,7 @@ const About = () => {
           className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 shadow-xl"
         >
           <h3 className="text-2xl font-semibold mb-4 flex items-center gap-3 text-cyan-400">
-            <span role="img" aria-label="education icon">
-              🎓
-            </span>{' '}
-            Education
+            🎓 Education
           </h3>
           <p className="text-lg leading-relaxed text-white/90">
             I am currently pursuing a B.Tech in Mathematics and Computing at{' '}
@@ -70,6 +76,7 @@ const About = () => {
           </p>
         </motion.div>
 
+        {/* Skills */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -78,13 +85,11 @@ const About = () => {
           className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 shadow-xl"
         >
           <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3 text-cyan-400">
-            <span role="img" aria-label="tools icon">
-              🛠
-            </span>{' '}
-            Skills
+            🛠 Skills
           </h3>
 
           <div className="space-y-8">
+            {/* Languages */}
             <motion.div
               variants={{
                 hidden: { opacity: 0 },
@@ -101,33 +106,22 @@ const About = () => {
             >
               <p className="text-lg font-medium mb-3 text-white/80">Languages</p>
               <div className="flex flex-wrap gap-6 text-4xl">
-                <motion.div variants={iconVariants}>
-                  <SiJavascript
-                    title="JavaScript"
-                    className="text-yellow-400 hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
-                <motion.div variants={iconVariants}>
-                  <SiTypescript
-                    title="TypeScript"
-                    className="text-blue-500 hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
-                <motion.div variants={iconVariants}>
-                  <SiPython
-                    title="Python"
-                    className="text-yellow-300 hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
-                <motion.div variants={iconVariants}>
-                  <SiCplusplus
-                    title="C++"
-                    className="text-blue-600 hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
+                <IconWrapper>
+                  <SiJavascript title="JavaScript" className="text-yellow-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
+                <IconWrapper>
+                  <SiTypescript title="TypeScript" className="text-blue-500 hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
+                <IconWrapper>
+                  <SiPython title="Python" className="text-yellow-300 hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
+                <IconWrapper>
+                  <SiCplusplus title="C++" className="text-blue-600 hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
               </div>
             </motion.div>
 
+            {/* Frameworks */}
             <motion.div
               variants={{
                 hidden: { opacity: 0 },
@@ -142,37 +136,24 @@ const About = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
             >
-              <p className="text-lg font-medium mb-3 text-white/80">
-                Frameworks & Libraries
-              </p>
+              <p className="text-lg font-medium mb-3 text-white/80">Frameworks & Libraries</p>
               <div className="flex flex-wrap gap-6 text-4xl">
-                <motion.div variants={iconVariants}>
-                  <SiReact
-                    title="React"
-                    className="text-cyan-400 hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
-                <motion.div variants={iconVariants}>
-                  <SiNextdotjs
-                    title="Next.js"
-                    className="text-black dark:text-white hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
-                <motion.div variants={iconVariants}>
-                  <SiTailwindcss
-                    title="Tailwind CSS"
-                    className="text-sky-400 hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
-                <motion.div variants={iconVariants}>
-                  <SiNodedotjs
-                    title="Node.js"
-                    className="text-green-500 hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
+                <IconWrapper>
+                  <SiReact title="React" className="text-cyan-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
+                <IconWrapper>
+                  <SiNextdotjs title="Next.js" className="text-black dark:text-white hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
+                <IconWrapper>
+                  <SiTailwindcss title="Tailwind CSS" className="text-sky-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
+                <IconWrapper>
+                  <SiNodedotjs title="Node.js" className="text-green-500 hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
               </div>
             </motion.div>
 
+            {/* Tools */}
             <motion.div
               variants={{
                 hidden: { opacity: 0 },
@@ -189,18 +170,12 @@ const About = () => {
             >
               <p className="text-lg font-medium mb-3 text-white/80">Tools</p>
               <div className="flex flex-wrap gap-6 text-4xl">
-                <motion.div variants={iconVariants}>
-                  <SiGit
-                    title="Git"
-                    className="text-orange-400 hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
-                <motion.div variants={iconVariants}>
-                  <SiGithub
-                    title="GitHub"
-                    className="text-gray-400 hover:text-white hover:scale-110 transition-all cursor-pointer"
-                  />
-                </motion.div>
+                <IconWrapper>
+                  <SiGit title="Git" className="text-orange-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
+                <IconWrapper>
+                  <SiGithub title="GitHub" className="text-gray-400 hover:text-white hover:scale-110 transition-all cursor-pointer" />
+                </IconWrapper>
               </div>
             </motion.div>
           </div>
