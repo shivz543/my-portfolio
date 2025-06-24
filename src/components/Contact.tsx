@@ -6,7 +6,7 @@ import { Mail, Linkedin, Github } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <motion.section
+    <motion.section id="contact"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: 'easeOut' }}

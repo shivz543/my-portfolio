@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section className="relative h-screen flex justify-center items-center px-6 md:px-24 text-white overflow-hidden">
       <ParticlesBackground />
-      <motion.div
+      <motion.div id="home"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
@@ -48,8 +48,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.7, type: 'spring', stiffness: 100 }}
           className="text-xl md:text-2xl max-w-xl text-white/90"
         >
-          A passionate Web Developer crafting modern, scalable, and responsive
-          websites with a focus on user experience.
+          A tech enthusiast exploring Data Structures, Web Development and Machine learning crafting modern, real-life problem solutions with a focus on user experience.
         </motion.p>
       </motion.div>
 
