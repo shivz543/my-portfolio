@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, cubicBezier } from 'framer-motion';
 
 const projects = [
   {
@@ -15,11 +15,11 @@ The platform includes a period tracker with calendar-based flow logging, a sympt
     content: `Developed a lightweight gesture recognition system tailored for edge devices using TinyML, with a focus on speed and efficiency. Trained a deep learning model using TensorFlow, TensorFlow Lite, and Keras to classify hand gestures from real-time video. Implemented preprocessing pipelines using OpenCV and NumPy for frame extraction and noise reduction. Employed scikit-learn for model evaluation and optimization. Achieved real-time classification with high accuracy and low latency, enabling effective deployment on constrained hardware.`
   },
   {
-    title: " JEE/NEET Solver Bot (AI Chatbot)",
+    title: "JEE/NEET Solver Bot (AI Chatbot)",
     content: `Built an intelligent academic support chatbot hosted on Replit, leveraging OpenRouter API and large language models (LLMs) for natural language understanding. Integrated machine learning logic with NumPy and Pandas for efficient data handling and custom query routing. Enabled real-time responses for complex STEM queries, enhancing student engagement and support. Designed to simulate a personalized AI tutor experience for exam preparation, with seamless backend deployment.`
   },
   {
-    title: " Sales Analytics on Delivery Apps",
+    title: "Sales Analytics on Delivery Apps",
     content: `Conducted a comprehensive data analysis project using R and the Tidyverse suite to uncover actionable insights from delivery app data. Visualized customer behavior trends and order patterns with ggplot2, and developed interactive dashboards using Plotly and Shiny for stakeholder reporting. Identified high-conversion product categories and temporal demand spikes, informing a data-driven repositioning strategy. Resulted in a 25% improvement in customer retention segmentation accuracy.`
   }
 ];
@@ -38,7 +38,10 @@ const tileVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }
+    transition: {
+      duration: 0.6,
+      ease: cubicBezier(0.25, 0.1, 0.25, 1) // ✅ fixed easing
+    }
   }
 };
 
