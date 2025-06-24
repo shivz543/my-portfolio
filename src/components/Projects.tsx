@@ -6,6 +6,7 @@ import { motion, cubicBezier } from 'framer-motion';
 const projects = [
   {
     title: "HerCare Buddy",
+    url: "https://hercare-buddy.vercel.app",
     content: `HerCare Buddy is a web application focused on women’s health, especially for users managing PCOD and menstrual wellness. Built using ReactJS, Tailwind CSS, React Router, Framer Motion, and React Calendar, it offers a modular and responsive design with smooth animations and intuitive navigation. The tech stack ensures scalability and clean UI/UX, with plans to integrate Firebase for backend functionality and LLM-based APIs for chatbot support.
 
 The platform includes a period tracker with calendar-based flow logging, a symptom analyzer with severity input, a mood board for mental health journaling, and an informative article hub. Additional features include food and fitness recommendations, a doctor contact directory, and a tool to suggest medical consultation based on logged symptoms. HerCare Buddy combines practicality with empathy to offer a supportive digital space for menstrual and hormonal health management.`
